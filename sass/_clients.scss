@@ -1,0 +1,11 @@
+.clients {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 5rem;
+    &__logo {
+        grid-column: span 2;
+        height: 4.5rem;
+    }
+}

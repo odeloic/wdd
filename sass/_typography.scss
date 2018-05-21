@@ -1,0 +1,33 @@
+%heading {
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 8vw;
+}
+
+.heading-2 {
+    @extend %heading;
+}
+
+.heading-3 {
+    @extend %heading;
+}
+
+.heading-4 {
+    @extend %heading;
+}
+
+
+/* color helpers */
+
+.yellow {
+    color: $color-primary;
+}
+
+.light-grey {
+    color: $color-grey-light-2;
+}

@@ -1,0 +1,40 @@
+.testimonials {
+    grid-column: full-start / full-end;
+    background-color: $color-secondary;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 5rem;
+    padding: 10rem 5rem;
+    justify-items: center;
+    &__quote {
+        grid-column: 1 / -1;
+        font-size: 4rem;
+        color: $color-grey-light-2;
+        font-weight: 300;
+        text-align: center;
+    }
+    &__clients {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 5rem;
+    }
+    &__client {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: $color-grey-dark-2;
+        cursor: pointer;
+        h4 {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        span {
+            font-weight: 700;
+        }
+        &.selected {
+            color: $color-primary;
+        }
+    }
+}

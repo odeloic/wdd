@@ -1,0 +1,62 @@
+.header {
+    position: relative;
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(rgba($color-secondary, .43), rgba($color-secondary, .43)), url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    justify-items: center;
+    &__text {
+        grid-column: 3 / span 2;
+        grid-row: 3 / span 2;
+        text-align: center;
+        .heading-1 {
+            letter-spacing: -8px;
+            margin-bottom: 2rem;
+        }
+        .heading-2 {
+            font-weight: 400;
+            letter-spacing: .5rem;
+        }
+    }
+    &__logo {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+    }
+}
+
+.menu__icon {
+    position: absolute;
+    top: 6rem;
+    right: 3rem;
+    width: 3rem;
+    height: 30px;
+    cursor: pointer;
+    &::before,
+    &::after {
+        width: 2.5rem;
+        height: 2px;
+        background-color: $color-grey-light-1;
+        position: absolute;
+        content: '';
+    }
+    &::before {
+        top: -8px;
+    }
+    &::after {
+        top: 8px;
+    }
+    &__middle {
+        width: 2.5rem;
+        height: 2px;
+        background-color: $color-grey-light-1;
+        display: block;
+        position: relative;
+        right: .5rem;
+    }
+}

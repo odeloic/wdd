@@ -1,0 +1,36 @@
+/* Base styles */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-base;
+    color: $color-grey-dark-2;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+
+/* Grid System */
+
+.content {
+    display: grid;
+    grid-template-rows: 80vh repeat(6, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-row-gap: 5rem;
+}
+
+.content>* {
+    padding: 2rem;
+}

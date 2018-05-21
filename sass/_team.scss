@@ -1,0 +1,97 @@
+.team {
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 5rem;
+    padding: 5rem 5rem 5rem;
+    align-items: center;
+    background-color: $color-grey-light-1;
+    hyphens: auto;
+    justify-items: center;
+    &__primary {
+        grid-column: 3 / span 4;
+        grid-row: 1 / 2;
+    }
+    &__secondary {
+        grid-column: 1 / -1;
+        grid-row: 2 / span 2;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: start;
+        grid-column-gap: 5rem;
+        grid-row-gap: 7rem;
+    }
+}
+
+.member {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-column-gap: 2rem;
+    align-items: start;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    &__name {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+    &__function {
+        display: block;
+        color: $color-primary;
+        font-weight: 700;
+    }
+    &__img {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            border: 1rem solid #ffc117;
+            height: 7.5rem;
+            width: 7.5rem;
+        }
+        img {
+            width: 100%;
+            height: 30rem;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+    }
+    &--main {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        align-items: start;
+        font-size: 1.5rem;
+        .member__name {
+            align-self: end;
+        }
+        .member__img {
+            width: 100%;
+            position: relative;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2rem;
+                left: -2rem;
+                border: 1rem solid #ffc117;
+                height: 15rem;
+                width: 15rem;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+}
