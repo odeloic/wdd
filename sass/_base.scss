@@ -1,3 +1,10 @@
+/* breakpoints */
+
+$bp-largest: 75em;
+$bp-large: 62.5em;
+$bp-med: 50rem;
+$bp-medium: 43.75em;
+
 /* Base styles */
 
 *,
@@ -11,6 +18,9 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    @media screen and ( max-width: $bp-largest) {
+        font-size: 50%;
+    }
 }
 
 body {
@@ -28,7 +38,6 @@ body {
     display: grid;
     grid-template-rows: 80vh repeat(6, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-    grid-row-gap: 5rem;
 }
 
 .content>* {

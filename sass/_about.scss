@@ -4,10 +4,17 @@
         align-content: center;
         justify-content: center;
         padding: 4rem 5rem;
+        @media screen and ( max-width: $bp-medium) {
+            grid-column: 1 / -1;
+        }
     }
     &__story {
         padding: 4rem 5rem;
         grid-column: col-start 5 / full-end;
+        @media screen and ( max-width: $bp-medium) {
+            grid-column: 1 / -1;
+            grid-row: 3 / 4;
+        }
         p:first-child:first-letter {
             color: $color-primary;
             float: left;
@@ -27,7 +34,7 @@
     display: grid;
     grid-column-gap: 3rem;
     grid-row-gap: 1.5rem;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: min-content minmax(min-content, max-content);
     &__icon {
         width: 3.5rem;
         height: 3.5rem;

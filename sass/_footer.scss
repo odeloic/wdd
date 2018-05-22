@@ -3,13 +3,25 @@
     padding: 3rem 5rem;
     .contact {
         display: grid;
-        grid-template-columns: 70% 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-column-gap: 5rem;
-        &__info {
-            margin-top: 2rem;
-            &__heading {
-                margin-bottom: 1.3rem;
+        grid-row-gap: 5rem;
+        &__form {
+            @media screen and ( max-width: $bp-med) {
+                grid-column: 1 / -1;
             }
+        }
+        &__information {
+            @media screen and ( max-width: $bp-med) {
+                grid-column: 1 / -1;
+                grid-row: 1 / 2;
+            }
+        }
+    }
+    &__info {
+        margin-top: 2rem;
+        &__heading {
+            margin-bottom: 1.3rem;
         }
     }
     /* form styles */
@@ -71,7 +83,7 @@
         }
     }
     .address {
-        margin-bottom: 1rem;
+        margin-top: 2rem;
         &__title {
             font-weight: 700;
             color: #515151;

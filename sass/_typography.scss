@@ -6,7 +6,10 @@
 
 .heading-1 {
     @extend %heading;
-    font-size: 8vw;
+    font-size: 8rem;
+    @media screen and ( max-width: $bp-large) {
+        // font-size: 4vw;
+    }
 }
 
 .heading-2 {

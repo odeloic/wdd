@@ -1,3 +1,4 @@
+/* breakpoints */
 /* Base styles */
 *,
 *::before,
@@ -9,6 +10,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Source Sans Pro", sans-serif;
@@ -21,8 +25,7 @@ body {
 .content {
   display: grid;
   grid-template-rows: 80vh repeat(6, min-content);
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-  grid-row-gap: 5rem; }
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 .content > * {
   padding: 2rem; }
@@ -33,7 +36,7 @@ body {
   line-height: 1; }
 
 .heading-1 {
-  font-size: 8vw; }
+  font-size: 8rem; }
 
 .heading-mb--small {
   margin-bottom: 1.3rem; }
@@ -68,11 +71,18 @@ body {
     grid-row: 3 / span 2;
     text-align: center; }
     .header__text .heading-1 {
-      letter-spacing: -8px;
+      letter-spacing: -3px;
       margin-bottom: 2rem; }
+      @media screen and (max-width: 75em) {
+        .header__text .heading-1 {
+          letter-spacing: normal; } }
     .header__text .heading-2 {
-      font-weight: 400;
-      letter-spacing: .5rem; }
+      font-weight: 300;
+      letter-spacing: .2rem;
+      font-size: 2.4rem; }
+      @media screen and (max-width: 62.5em) {
+        .header__text .heading-2 {
+          letter-spacing: 1px; } }
   .header__logo {
     position: absolute;
     top: 3rem;
@@ -108,10 +118,17 @@ body {
   align-content: center;
   justify-content: center;
   padding: 4rem 5rem; }
+  @media screen and (max-width: 43.75em) {
+    .about__services {
+      grid-column: 1 / -1; } }
 
 .about__story {
   padding: 4rem 5rem;
   grid-column: col-start 5 / full-end; }
+  @media screen and (max-width: 43.75em) {
+    .about__story {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4; } }
   .about__story p:first-child:first-letter {
     color: #ffc117;
     float: left;
@@ -127,7 +144,7 @@ body {
   display: grid;
   grid-column-gap: 3rem;
   grid-row-gap: 1.5rem;
-  grid-template-columns: min-content 1fr; }
+  grid-template-columns: min-content minmax(min-content, max-content); }
   .service__icon {
     width: 3.5rem;
     height: 3.5rem;
@@ -138,14 +155,11 @@ body {
     margin-bottom: 3rem; }
 
 .team {
-  grid-column: full-start / full-end;
+  grid-column: center-start / center-end;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-row-gap: 5rem;
-  padding: 5rem 5rem 5rem;
+  grid-row-gap: 10rem;
   align-items: center;
-  background-color: #fbfbfb;
   hyphens: auto;
   justify-items: center; }
   .team__primary {
@@ -153,21 +167,27 @@ body {
     grid-row: 1 / 2; }
   .team__secondary {
     grid-column: 1 / -1;
-    grid-row: 2 / span 2;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: start;
     grid-column-gap: 5rem;
     grid-row-gap: 7rem; }
+    @media screen and (max-width: 50rem) {
+      .team__secondary {
+        justify-items: center; } }
 
 .member {
   grid-column: span 3;
   display: grid;
-  grid-template-columns: 40% 1fr;
+  grid-template-columns: max-content 1fr;
   grid-column-gap: 2rem;
   align-items: start;
   font-size: 1.5rem;
-  line-height: 1.6; }
+  line-height: 1.6;
+  align-items: center; }
+  @media screen and (max-width: 50rem) {
+    .member {
+      grid-column: 1 / -1; } }
   .member__name {
     font-size: 1.8rem;
     line-height: 1.2;
@@ -177,7 +197,8 @@ body {
     color: #ffc117;
     font-weight: 700; }
   .member__img {
-    position: relative; }
+    position: relative;
+    height: 30rem; }
     .member__img::before {
       content: '';
       display: block;
@@ -188,21 +209,20 @@ body {
       height: 7.5rem;
       width: 7.5rem; }
     .member__img img {
-      width: 100%;
-      height: 30rem;
+      height: 100%;
+      max-width: 100%;
       object-fit: cover;
       display: block;
       position: relative;
       z-index: 2; }
   .member--main {
     display: grid;
-    grid-template-columns: 60% 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: start;
     font-size: 1.5rem; }
     .member--main .member__name {
       align-self: end; }
     .member--main .member__img {
-      width: 100%;
       position: relative; }
       .member--main .member__img::before {
         content: '';
@@ -214,8 +234,8 @@ body {
         height: 15rem;
         width: 15rem; }
       .member--main .member__img img {
-        width: 100%;
-        height: auto;
+        max-height: 30rem;
+        max-width: 100%;
         object-fit: cover;
         display: block;
         position: relative;
@@ -245,14 +265,19 @@ body {
         margin-bottom: 2rem; }
 
 .clients {
-  grid-column: center-start / center-end;
+  grid-column: full-start / full-end;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 5rem; }
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-auto-flow: row;
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  background-color: #ffc117;
+  justify-items: center;
+  align-items: center;
+  justify-content: center; }
   .clients__logo {
-    grid-column: span 2;
-    height: 4.5rem; }
+    grid-column: span 1;
+    height: 3.5rem; }
 
 .testimonials {
   grid-column: full-start / full-end;
@@ -294,12 +319,20 @@ body {
   /* form styles */ }
   .footer .contact {
     display: grid;
-    grid-template-columns: 70% 1fr;
-    grid-column-gap: 5rem; }
-    .footer .contact__info {
-      margin-top: 2rem; }
-      .footer .contact__info__heading {
-        margin-bottom: 1.3rem; }
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5rem;
+    grid-row-gap: 5rem; }
+    @media screen and (max-width: 50rem) {
+      .footer .contact__form {
+        grid-column: 1 / -1; } }
+    @media screen and (max-width: 50rem) {
+      .footer .contact__information {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2; } }
+  .footer__info {
+    margin-top: 2rem; }
+    .footer__info__heading {
+      margin-bottom: 1.3rem; }
   .footer input,
   .footer textarea {
     border: 0;
@@ -347,7 +380,7 @@ body {
       color: #fff;
       display: block; }
   .footer .address {
-    margin-bottom: 1rem; }
+    margin-top: 2rem; }
     .footer .address__title {
       font-weight: 700;
       color: #515151;

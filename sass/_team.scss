@@ -1,12 +1,9 @@
 .team {
-    grid-column: full-start / full-end;
+    grid-column: center-start / center-end;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 5rem;
-    padding: 5rem 5rem 5rem;
+    grid-row-gap: 10rem;
     align-items: center;
-    background-color: $color-grey-light-1;
     hyphens: auto;
     justify-items: center;
     &__primary {
@@ -15,23 +12,30 @@
     }
     &__secondary {
         grid-column: 1 / -1;
-        grid-row: 2 / span 2;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         align-items: start;
         grid-column-gap: 5rem;
         grid-row-gap: 7rem;
+        @media screen and ( max-width: $bp-med) {
+            justify-items: center;
+        }
     }
 }
 
 .member {
     grid-column: span 3;
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: max-content 1fr;
     grid-column-gap: 2rem;
     align-items: start;
     font-size: 1.5rem;
     line-height: 1.6;
+    align-items: center;
+    @media screen and ( max-width: $bp-med) {
+        grid-column: 1 / -1;
+        // grid-template-columns: 1fr minmax(min-content, max-content);
+    }
     &__name {
         font-size: 1.8rem;
         line-height: 1.2;
@@ -44,6 +48,7 @@
     }
     &__img {
         position: relative;
+        height: 30rem;
         &::before {
             content: '';
             display: block;
@@ -55,8 +60,8 @@
             width: 7.5rem;
         }
         img {
-            width: 100%;
-            height: 30rem;
+            height: 100%;
+            max-width: 100%;
             object-fit: cover;
             display: block;
             position: relative;
@@ -65,14 +70,13 @@
     }
     &--main {
         display: grid;
-        grid-template-columns: 60% 1fr;
+        grid-template-columns: 1fr 1fr;
         align-items: start;
         font-size: 1.5rem;
         .member__name {
             align-self: end;
         }
         .member__img {
-            width: 100%;
             position: relative;
             &::before {
                 content: '';
@@ -85,8 +89,8 @@
                 width: 15rem;
             }
             img {
-                width: 100%;
-                height: auto;
+                max-height: 30rem;
+                max-width: 100%;
                 object-fit: cover;
                 display: block;
                 position: relative;
