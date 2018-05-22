@@ -21,6 +21,10 @@
     @extend %heading;
 }
 
+.heading-mb--small {
+    margin-bottom: 1.3rem;
+}
+
 
 /* color helpers */
 
@@ -30,4 +34,12 @@
 
 .light-grey {
     color: $color-grey-light-2;
+}
+
+.heading-section {
+    font-size: 15vw;
+    margin-bottom: 8rem;
+    .highlight {
+        color: $color-grey-light-2;
+    }
 }
