@@ -72,7 +72,8 @@
     }
     &--main {
         display: grid;
-        grid-template-columns: 1fr min-content;
+        grid-template-columns: 1fr 1fr;
+        grid-row: 1fr 1fr;
         align-items: center;
         font-size: 1.5rem;
         grid-row-gap: 3rem;
@@ -81,10 +82,11 @@
         }
         .member__img {
             position: relative;
-            max-height: 45rem;
+            max-height: 35rem;
             @media screen and ( max-width: $bp-small) {
                 height: 20rem;
                 grid-column: 1 / -1;
+                grid-row: 1 / 2;
             }
             &::before {
                 content: '';

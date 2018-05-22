@@ -229,7 +229,8 @@ body {
       z-index: 2; }
   .member--main {
     display: grid;
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
     align-items: center;
     font-size: 1.5rem;
     grid-row-gap: 3rem; }
@@ -237,11 +238,12 @@ body {
       align-self: end; }
     .member--main .member__img {
       position: relative;
-      max-height: 45rem; }
+      max-height: 35rem; }
       @media screen and (max-width: 25em) {
         .member--main .member__img {
           height: 20rem;
-          grid-column: 1 / -1; } }
+          grid-column: 1 / -1;
+          grid-row: 1 / 2; } }
       .member--main .member__img::before {
         content: '';
         display: block;
