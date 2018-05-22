@@ -9,7 +9,7 @@
     &__item {
         grid-column: 2 / span 6;
         display: grid;
-        grid-template-columns: 70% 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-column-gap: 3rem;
         align-items: center;
         &__img {

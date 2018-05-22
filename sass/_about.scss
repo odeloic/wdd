@@ -1,5 +1,9 @@
 .about {
     &__services {
+        background-image: linear-gradient(rgba($color-secondary, .6), rgba($color-secondary, .6)), url(../img//bg-2.jpg);
+        background-size: cover;
+        background-position: center;
+        color: #fff;
         grid-column: full-start / col-end 4;
         align-content: center;
         justify-content: center;
@@ -11,6 +15,7 @@
     &__story {
         padding: 4rem 5rem;
         grid-column: col-start 5 / full-end;
+        align-self: center;
         @media screen and ( max-width: $bp-medium) {
             grid-column: 1 / -1;
             grid-row: 3 / 4;
@@ -41,6 +46,9 @@
         fill: $color-primary;
         display: block;
         grid-row: 1 / span 2;
+    }
+    p {
+        font-weight: 300;
     }
     &:not(:last-child) {
         margin-bottom: 3rem;

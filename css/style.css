@@ -37,6 +37,9 @@ body {
 
 .heading-1 {
   font-size: 8rem; }
+  @media screen and (max-width: 25em) {
+    .heading-1 {
+      font-size: 6rem; } }
 
 .heading-mb--small {
   margin-bottom: 1.3rem; }
@@ -114,6 +117,10 @@ body {
     right: .5rem; }
 
 .about__services {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img//bg-2.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   grid-column: full-start / col-end 4;
   align-content: center;
   justify-content: center;
@@ -124,7 +131,8 @@ body {
 
 .about__story {
   padding: 4rem 5rem;
-  grid-column: col-start 5 / full-end; }
+  grid-column: col-start 5 / full-end;
+  align-self: center; }
   @media screen and (max-width: 43.75em) {
     .about__story {
       grid-column: 1 / -1;
@@ -151,6 +159,8 @@ body {
     fill: #ffc117;
     display: block;
     grid-row: 1 / span 2; }
+  .service p {
+    font-weight: 300; }
   .service:not(:last-child) {
     margin-bottom: 3rem; }
 
@@ -161,9 +171,11 @@ body {
   grid-row-gap: 10rem;
   align-items: center;
   hyphens: auto;
-  justify-items: center; }
+  justify-items: center;
+  align-items: center;
+  padding: 10rem 0; }
   .team__primary {
-    grid-column: 3 / span 4;
+    grid-column: 2 / 8;
     grid-row: 1 / 2; }
   .team__secondary {
     grid-column: 1 / -1;
@@ -179,7 +191,7 @@ body {
 .member {
   grid-column: span 3;
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 2rem;
   align-items: start;
   font-size: 1.5rem;
@@ -210,20 +222,26 @@ body {
       width: 7.5rem; }
     .member__img img {
       height: 100%;
-      max-width: 100%;
+      width: 100%;
       object-fit: cover;
       display: block;
       position: relative;
       z-index: 2; }
   .member--main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    font-size: 1.5rem; }
+    grid-template-columns: 1fr min-content;
+    align-items: center;
+    font-size: 1.5rem;
+    grid-row-gap: 3rem; }
     .member--main .member__name {
       align-self: end; }
     .member--main .member__img {
-      position: relative; }
+      position: relative;
+      max-height: 45rem; }
+      @media screen and (max-width: 25em) {
+        .member--main .member__img {
+          height: 20rem;
+          grid-column: 1 / -1; } }
       .member--main .member__img::before {
         content: '';
         display: block;
@@ -234,7 +252,7 @@ body {
         height: 15rem;
         width: 15rem; }
       .member--main .member__img img {
-        max-height: 30rem;
+        height: 100%;
         max-width: 100%;
         object-fit: cover;
         display: block;
@@ -252,7 +270,7 @@ body {
   .work__item {
     grid-column: 2 / span 6;
     display: grid;
-    grid-template-columns: 70% 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 3rem;
     align-items: center; }
     .work__item__img {
@@ -287,6 +305,7 @@ body {
   grid-template-rows: 1fr 1fr;
   grid-row-gap: 5rem;
   padding: 10rem 5rem;
+  overflow: hidden;
   justify-items: center; }
   .testimonials__quote {
     grid-column: 1 / -1;
@@ -294,6 +313,9 @@ body {
     color: #dbdbdf;
     font-weight: 300;
     text-align: center; }
+    @media screen and (max-width: 25em) {
+      .testimonials__quote {
+        font-size: 2rem; } }
   .testimonials__clients {
     grid-column: 1 / -1;
     display: grid;
@@ -329,10 +351,10 @@ body {
       .footer .contact__information {
         grid-column: 1 / -1;
         grid-row: 1 / 2; } }
-  .footer__info {
-    margin-top: 2rem; }
-    .footer__info__heading {
-      margin-bottom: 1.3rem; }
+    .footer .contact__info {
+      margin-top: 3rem; }
+      .footer .contact__info__heading {
+        margin-bottom: 1.3rem; }
   .footer input,
   .footer textarea {
     border: 0;
@@ -380,7 +402,7 @@ body {
       color: #fff;
       display: block; }
   .footer .address {
-    margin-top: 2rem; }
+    margin-top: 1rem; }
     .footer .address__title {
       font-weight: 700;
       color: #515151;

@@ -17,11 +17,11 @@
                 grid-row: 1 / 2;
             }
         }
-    }
-    &__info {
-        margin-top: 2rem;
-        &__heading {
-            margin-bottom: 1.3rem;
+        &__info {
+            margin-top: 3rem;
+            &__heading {
+                margin-bottom: 1.3rem;
+            }
         }
     }
     /* form styles */
@@ -83,7 +83,7 @@
         }
     }
     .address {
-        margin-top: 2rem;
+        margin-top: 1rem;
         &__title {
             font-weight: 700;
             color: #515151;

@@ -6,8 +6,10 @@
     align-items: center;
     hyphens: auto;
     justify-items: center;
+    align-items: center;
+    padding: 10rem 0;
     &__primary {
-        grid-column: 3 / span 4;
+        grid-column: 2 / 8;
         grid-row: 1 / 2;
     }
     &__secondary {
@@ -26,7 +28,7 @@
 .member {
     grid-column: span 3;
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
     align-items: start;
     font-size: 1.5rem;
@@ -61,7 +63,7 @@
         }
         img {
             height: 100%;
-            max-width: 100%;
+            width: 100%;
             object-fit: cover;
             display: block;
             position: relative;
@@ -70,14 +72,20 @@
     }
     &--main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
+        grid-template-columns: 1fr min-content;
+        align-items: center;
         font-size: 1.5rem;
+        grid-row-gap: 3rem;
         .member__name {
             align-self: end;
         }
         .member__img {
             position: relative;
+            max-height: 45rem;
+            @media screen and ( max-width: $bp-small) {
+                height: 20rem;
+                grid-column: 1 / -1;
+            }
             &::before {
                 content: '';
                 display: block;
@@ -89,7 +97,7 @@
                 width: 15rem;
             }
             img {
-                max-height: 30rem;
+                height: 100%;
                 max-width: 100%;
                 object-fit: cover;
                 display: block;
